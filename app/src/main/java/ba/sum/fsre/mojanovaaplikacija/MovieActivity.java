@@ -2,6 +2,7 @@ package ba.sum.fsre.mojanovaaplikacija;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,6 +35,11 @@ public class MovieActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
+        // Inside your MovieActivity or wherever you set up your RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.movieListView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL)); // Optional: Add divider between items
+
 
 
         FloatingActionButton openMovieDialogBtn = findViewById(R.id.showMovieDialogBtn);
